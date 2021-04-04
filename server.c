@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
         printf("Received: %s\n",buf);
 
         printf("Enter messsage to send to client:" );
-        printf("To end communication enter shutdown");
+        printf("To end communication enter shutdown or quit");
         scanf("%s",msg);
 
         int bytes_sent=send(sock_recv,msg,BUF_SIZE,0);
