@@ -41,6 +41,7 @@ int main(int argc, char *argv[]){
     while (1){
         /* send some data */
         printf("Send? ");
+        printf("To end communication enter quit");
         scanf("%s",text);
 
                if (strcmp(text,"quit") == 0)
