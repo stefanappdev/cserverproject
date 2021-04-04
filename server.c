@@ -8,6 +8,84 @@
 
 #define BUF_SIZE	1024
 #define LISTEN_PORT	60000
+# define NUM_RANGE 9
+# define SIZE 26
+char * grid[NUM_RANGE][NUM_RANGE];
+
+void getNewBoard(){
+    //creates a brand new blank board. Returns a pointer to the array 
+    int j,k;
+    //char * grid[NUM_RANGE][NUM_RANGE];
+    for (j = 0; j < NUM_RANGE; j++){
+        for (k = 0; k < NUM_RANGE; k++)
+        {
+            grid[k][j]="   ";
+        }//Endfor
+    }//Endfor
+    return;
+}//EndFunction getNewBoard
+void drawBoard(){
+    int j,k;
+    //This function prints out the board that was passed. Returns void
+    char * const NLINE = "    A    B    C    D    E    F    G    H    I";
+    char * const HLINE = "  +----+----+----+----+----+----+----+----+----+";
+    char * const VLINE = "  |    |    |    |    |    |    |    |    |    |";
+
+    printf("%s\n",NLINE);
+    printf("%s\n",HLINE);
+    for (j = 0; j < NUM_RANGE; j++)
+    {  
+        printf("%s\n",VLINE);
+        printf("%d ",j+1);
+        for (k = 0; k < NUM_RANGE; k++)
+        {  if(strcmp(grid[k][j],"   ")==0){
+                printf("| %s",grid[k][j]);
+            }else{
+                printf("| %s  ",grid[k][j]);
+            }
+        }
+        printf("%s","|");
+        printf("\n");
+        printf("%s\n",VLINE);
+        printf("%s\n",HLINE);
+    }
+    return;
+}//EndFunction drawBoard
+void makePlay(int x, int y, char* c){
+    //Arrays are zero indexed but our grid starts at index 1
+    grid[x-1][y-1]=c;
+    
+    return;
+}//EndFunction makePlay
+void startBoard(int *num, char*l){
+    //struct startPlays p1;
+    for (int i = 0;i<11;i++)
+    {
+        printf("%d %d %c \n",*(num +i),*(num +i+11),*(l+i));
+        //makePlay(*(num +i),*(num +i+10),strcat(*(l+i),"");
+    }
+//create fun to generate ran num 1-9, add to array(compare to previous to prevent duplicates)
+}//EndFunction startBoard
+
+
+
+int Average(int num1, int num2)
+{
+	return 0;
+}
+int Sum(int num1, int num2)
+{
+	return 0;
+}
+int Range(int num1, int num2)
+{
+	return 0;
+}
+
+void saveWorksheet()
+{
+
+}
 
 int main(int argc, char *argv[]){
 
